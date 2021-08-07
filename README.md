@@ -13,8 +13,11 @@
 
 ## Запуск проекта
 `npm install` - установка необходимых зависимостей
+
 `npm run start` — запускает react приложение   
+
 `npm run build` — сборка react-приложения
+
 
 ## Ссылка на сайт
 https://jt-movies.nomoredomains.club
@@ -24,5 +27,8 @@ https://www.figma.com/file/0dhWz1NhFTWuit0iPkoPft/DiplomaProjectTuvaleva?node-id
 
 ## Структура проекта
 /components - хранятся React-компоненты проекта;
+
 /images - изображения, используемые в проекте;
+
 /vendor - хранятся файлы основного шрифта проекта.
+
