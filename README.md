@@ -18,7 +18,7 @@
 
 
 ## Ссылка на сайт
-https://jt-movies.nomoredomains.club
+https://jt-movies.nomoredomains.monster/
 
 ## Ссылка на макет
 https://www.figma.com/file/0dhWz1NhFTWuit0iPkoPft/DiplomaProjectTuvaleva?node-id=891%3A3857
