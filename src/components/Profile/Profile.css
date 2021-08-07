@@ -1,0 +1,131 @@
+.profile {
+    width: 95%;
+    max-width: 1140px;
+    padding: 74px 0 0 0;
+    margin: 0 auto;
+    color: #FFFFFF;
+}
+
+.profile__title {
+    padding-bottom: 123px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+}
+
+.profile__form {
+    max-width: 410px;
+    margin: 0 auto;
+}
+
+.profile__form-group {
+    border-bottom: 1px solid #424242;
+    padding: 16px 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.profile__form-group:last-of-type {
+    border-bottom: none;
+}
+
+.profile__form-input {
+    padding: 0;
+    font-size: 11px;
+    line-height: 13px;
+    color: #FFFFFF;
+    background: transparent;
+    border: none;
+    text-align: right;
+}
+
+.profile__form-input::placeholder {
+    font-size: 11px;
+    line-height: 13px;
+    color: #FFFFFF;
+}
+
+.profile__form-input:focus {
+    outline: none;
+}
+
+
+.profile__label {
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 13px;
+}
+
+.profile__submit {
+    margin-top: 215px;
+    width: 100%;
+    padding: 14px 0;
+    background-color: #4285F4;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.profile__submit_disabled {
+    background: #F8F8F8;
+    color: #C2C2C2;
+}
+
+
+.profile__edit-btn {
+    padding-top: 194px;
+    width: 100%;
+    font-size: 13px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+}
+
+.profile__logout {
+    padding-top: 16px;
+    width: 100%;
+    font-size: 13px;
+    line-height: 16px;
+    color: #EE3465;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile__edit-btn:hover {
+    opacity: 0.6;
+    transition: opacity .2s ease-in-out;
+}
+
+.profile__logout:hover {
+    opacity: 0.6;
+    transition: opacity .2s ease-in-out;
+}
+
+.profile__form-group:focus-within {
+    border-bottom: 1px solid #4285F4;
+}
+
+@media (min-width: 501px) and (max-width: 700px) {
+    .profile__form {
+        max-width: 320px;
+    }
+}
+
+@media all and (max-width: 500px) {
+    .profile__form {
+        max-width: 260px;
+    }
+}
