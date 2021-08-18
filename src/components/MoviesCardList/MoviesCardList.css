@@ -1,0 +1,25 @@
+.movies-grid {
+    width: 100%;
+    margin: 0;
+    padding: 70px 0 60px;
+    color: #FFFFFF;
+    letter-spacing: -0.04em;
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+
+@media all and (max-width: 500px) {
+    .movies-grid {
+        padding-top: 40px;
+        gap: 14px;
+    }
+}
+
+
+@media (min-width: 760px) and (max-width: 900px) {
+    .movies-grid {
+        gap: 30px;
+    }
+}
