@@ -5,6 +5,13 @@
     margin: 0 auto;
 }
 
+.movies_notfound-text {
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 14px;
+    margin: 15vh auto;
+}
+
 .movies__load-btn {
     width: 100%;
     background: #2F2F2F;

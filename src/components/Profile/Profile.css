@@ -59,6 +59,11 @@
     line-height: 13px;
 }
 
+.profile-form__submit-area {
+    margin-top: 194px;
+    width: 100%;
+}
+
 .profile__submit {
     margin-top: 215px;
     width: 100%;
@@ -71,14 +76,7 @@
     transition: opacity 0.3s ease-in-out;
 }
 
-.profile__submit_disabled {
-    background: #F8F8F8;
-    color: #C2C2C2;
-}
-
-
 .profile__edit-btn {
-    padding-top: 194px;
     width: 100%;
     font-size: 13px;
     line-height: 16px;
@@ -92,7 +90,14 @@
     cursor: pointer;
 }
 
+.profile__submit_disabled {
+    color: #7a7a7a;
+}
+
 .profile__logout {
+    border: none;
+    background-color: transparent;
+    outline: none;
     padding-top: 16px;
     width: 100%;
     font-size: 13px;
@@ -118,6 +123,50 @@
     border-bottom: 1px solid #4285F4;
 }
 
+.profile-form__input {
+    padding-bottom: 10px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+    background: transparent;
+    border: none;
+    text-align: left;
+    width: 100%;
+    border-bottom: 1px solid #424242;
+    box-shadow:  0 0 0 30px transparent inset !important;
+    -webkit-box-shadow: 0 0 0 30px transparent inset !important;
+}
+
+.profile-form__input::placeholder {
+    color: #FFFFFF;
+    background-color: transparent;
+}
+
+.profile-form__input:focus {
+    outline: none;
+}
+
+.profile-form__input:focus-within {
+    border-bottom: 1px solid #4285F4;
+}
+
+.profile-form__input_invalid {
+    padding-top: 6;
+    color: #EE3465;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+    text-align: center;
+}
+
+::ng-deep input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: black;
+}
 @media (min-width: 501px) and (max-width: 700px) {
     .profile__form {
         max-width: 320px;

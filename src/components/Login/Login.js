@@ -1,12 +1,13 @@
 import React from 'react';
 import './Login.css';
 import AuthForm from '../AuthForm/AuthForm';
-//import Preloader from '../Preloader/Preloader';
-// import { Switch, Route, Router } from 'react-router-dom';
 
-function Login() {
+function Login({ statusMessage, handleLogin }) {
+    
     return (
-        <AuthForm type='signin'/>
+        <AuthForm type='signin'
+                  resErrorMessage = {statusMessage}
+                  handleSubmitAction={handleLogin}/>
     )
 };
 

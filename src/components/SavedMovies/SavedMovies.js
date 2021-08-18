@@ -1,21 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import './Movies.css';
 import SearchForm from '../SearchForm/SearchForm';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import Preloader from '../Preloader/Preloader';
-import { useLocation } from 'react-router-dom';
-import { MOVIE_EMPTY_PAGE, MOVIE_NOT_FOUND, SHORT_MOVIE_NOT_FOUND } from '../../utils/statusMessages';
+import { SAVED_MOVIE_EMPTY, SHORT_MOVIE_NOT_FOUND } from '../../utils/statusMessages';
 
-function Movies({
-    loggedIn, isLoading, moviesDict, savedMoviesDict, moviesSearchStatus, 
+function SavedMovies({
+    loggedIn, isLoading, moviesDict, filteredDict, moviesSearchStatus, 
     searchShortFilmStatusOk,
     isShortMovies, filterShortMovies, handleShortMovie, handleSearch,
     checkSavedMovie, handleMovieLike
 }) {
-    const currentPage = useLocation();
-    const openedAllMovies = (currentPage.pathname==='/movies');
     const [shortMoviesList, setShortMoviesList] = useState([]);
 
     useEffect(() => {
@@ -24,8 +20,7 @@ function Movies({
         } else {
             setShortMoviesList(moviesDict);
         }
-        
-    }, [isShortMovies, moviesDict]);
+    }, [moviesDict]);
 
     return (
         <>
@@ -36,25 +31,23 @@ function Movies({
                             handleShortMovie={handleShortMovie}
                             handleSearch={handleSearch}/>
                 { isLoading ? (<Preloader/>
-                ) : (searchShortFilmStatusOk===false & isShortMovies) ? (
+                ):(searchShortFilmStatusOk===false & isShortMovies) ? (
                     <p className='movies_notfound-text'>{SHORT_MOVIE_NOT_FOUND}</p>
-                ) : (moviesSearchStatus & moviesDict!==null) ? (
+                ):(moviesSearchStatus & moviesDict.length !== 0) ? (
                     <MoviesCardList isLoading={isLoading}
-                    openedAllMovies={openedAllMovies}
-                    moviesDict={!isShortMovies? moviesDict: shortMoviesList}
-                    savedMoviesDict={savedMoviesDict}
-                    checkSavedMovie={checkSavedMovie}
-                    handleMovieLike={handleMovieLike}/>
-                
-                ):(moviesDict===null)?(
-                    <p className='movies_notfound-text'>{MOVIE_EMPTY_PAGE}</p>
-                ) : (
-                    <p className='movies_notfound-text'>{MOVIE_NOT_FOUND}</p>
-                )}
+                                    moviesDict={!isShortMovies? moviesDict: shortMoviesList}
+                                    checkSavedMovie={checkSavedMovie}
+                                    handleMovieLike={handleMovieLike}/>
+                ) : (moviesDict.length === 0 ) ?(
+                    <p className='movies_notfound-text'>{SAVED_MOVIE_EMPTY}</p>
+                ) :(
+                    <p className='movies_notfound-text'>{SAVED_MOVIE_EMPTY}</p>
+                )
+                }
             </section>
             <Footer/>
         </>
     )
 };
 
-export default Movies;
+export default SavedMovies;

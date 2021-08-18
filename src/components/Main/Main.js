@@ -8,14 +8,14 @@ import Portfolio from './Portfolio/Portfolio';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
-function Main() {
+function Main({loggedIn}) {
     const aboutProjectRef = useRef(null);
     const techsRef = useRef(null);
     const aboutMeRef = useRef(null);
 
     return (
         <>
-            <Header/>
+            <Header loggedIn={loggedIn}/>
             <section className="main" >
                 <Promo refs={{ aboutProjectRef, techsRef, aboutMeRef }}/>
                 <AboutProject ref={aboutProjectRef}/>

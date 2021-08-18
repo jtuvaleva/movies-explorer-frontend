@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import BurgerButton from './BurgerButton/BurgerButton';
 import Navigation from './Navigation/Navigation';
 import Logo from '../Logo/Logo';
 import './Header.css';
 
-function Header() {
-    const currentPage = useLocation();
+function Header({ loggedIn }) {
     const [burgerMenu, setBurgerMenu] = useState(false);
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
@@ -26,20 +25,19 @@ function Header() {
         }
     }, [])
 
-
     return (
         <div className="header">
             <Logo />
-            { (currentPage.pathname==='/')  ? (
+            { (loggedIn===true)?(
+                <>
+                <Navigation burgerMenu={burgerMenu} screenWidth={screenWidth}/>
+                <BurgerButton isBurgerOpen={burgerMenu} onClick={handleBurger}/>
+                </> 
+            ):(
                 <div className="header__link-area">
                     <Link to='/signup' className="header__link header__link_register">Регистрация</Link>
                     <Link to='/signin' className="header__link header__link_login">Войти</Link>
                 </div>
-            ):(
-                <>
-                <Navigation burgerMenu={burgerMenu} screenWidth={screenWidth}/>
-                <BurgerButton isBurgerOpen={burgerMenu} onClick={handleBurger}/>
-                </>
             )}
         </div>
     )

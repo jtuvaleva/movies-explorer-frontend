@@ -24,6 +24,7 @@
     line-height: 16px;
     text-overflow: ellipsis;
     white-space: nowrap;
+    overflow: hidden;
 }
 
 .movies-card__duration {
@@ -49,7 +50,7 @@
 }
 
 .movies-card__like{
-    background-image: url('../../../images/like.svg');
+    background-image: url('../../images/like.svg');
     margin-left: 20px;
     background-position: center;
     background-size: contain;
@@ -63,7 +64,7 @@
 }
   
 .movies-card__like_active{
-    background-image: url('../../../images/like_active.svg');
+    background-image: url('../../images/like_active.svg');
     margin-left: 20px;
     background-position: center;
     background-size: contain;

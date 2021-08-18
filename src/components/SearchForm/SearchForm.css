@@ -24,7 +24,7 @@
 }
 
 .search__submit-btn {
-    background-image: url('../../../images/find_button.svg');
+    background-image: url('../../images/find_button.svg');
     background-size: cover;
     width: 44px;
     height: 44px;
@@ -36,4 +36,8 @@
 .search__submit-btn:hover {
     opacity: 0.8;
     transition: opacity .2s ease-in-out;
+}
+
+.search__submit-btn_disabled {
+    filter: brightness(50%);
 }

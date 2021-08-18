@@ -15,7 +15,6 @@
 }
 
 .auth-form__group {
-    border-bottom: 1px solid #424242;
     margin: 16px 0;
     width: 100%;
     display: flex;
@@ -36,6 +35,7 @@
     border: none;
     text-align: left;
     width: 100%;
+    border-bottom: 1px solid #424242;
 }
 
 .auth-form__label {
@@ -46,10 +46,19 @@
     color: #8B8B8B;
 }
 
+.auth-form__submit_signup {
+    margin-top: 152px;
+}
+
+.auth-form__submit_signin {
+    margin-top: 215px;
+}
+
 .auth-form__submit {
     width: 100%;
     padding: 14px 0;
     background-color: #4285F4;
+    color: #FFFFFF;
     border-radius: 3px;
     border: none;
     outline: none;
@@ -61,14 +70,10 @@
     opacity: 0.8;
 }
 
-.auth-form__submit_signup {
-    margin-top: 152px;
+.auth-form__submit_disabled {
+    background-color: #F8F8F8;
+    color: #C2C2C2;
 }
-
-.auth-form__submit_signin {
-    margin-top: 215px;
-}
-
 .auth-form__input::placeholder {
     color: #FFFFFF;
 }
@@ -81,7 +86,7 @@
     color: #EE3465;
 }
 
-.auth-form__group:focus-within {
+.auth-form__input:focus-within {
     border-bottom: 1px solid #4285F4;
 }
 
