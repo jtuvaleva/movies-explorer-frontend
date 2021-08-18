@@ -20,6 +20,7 @@ function Movies({
 
     useEffect(() => {
         if (isShortMovies && moviesDict !== null) {
+            console.log('im here')
             setShortMoviesList(filterShortMovies(moviesDict));
         } else {
             setShortMoviesList(moviesDict);

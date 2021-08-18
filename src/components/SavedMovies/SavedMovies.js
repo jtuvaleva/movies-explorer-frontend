@@ -20,7 +20,7 @@ function SavedMovies({
         } else {
             setShortMoviesList(moviesDict);
         }
-    }, [moviesDict]);
+    }, [moviesDict, isShortMovies]);
 
     return (
         <>

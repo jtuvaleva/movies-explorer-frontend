@@ -203,7 +203,7 @@ function App() {
   function handleAddMovie (movie) {
     api.addMovie(movie)
       .then((newMovie) => {
-        getSavedMovies();
+        setSavedMoviesList([...savedMoviesList, newMovie.film]);
        })
       .catch((error) => {
           console.log(error);
@@ -216,8 +216,7 @@ function App() {
 
     api.deleteMovie(_id)
         .then(() => {
-            checkSavedMovie(movie);
-            getSavedMovies();
+          setSavedMoviesList((item) => item.filter((c) => c.movieId !== movie.movieId))
         })
         .catch((error) => {
           console.log(error);
@@ -268,7 +267,6 @@ function App() {
   }
 
   function handleSearch(keyword){
-    getMoviesFromBeat();
     setIsLoading(true);
     if (location === '/movies') {
       const moviesList = JSON.parse(localStorage.getItem("movies"));
@@ -285,7 +283,7 @@ function App() {
     if (location === '/saved-movies') {
       return api.getSavedMovies()
         .then((res) => {
-          const filteredList = searchMovie(res, keyword);
+          const filteredList = searchMovie(res.data, keyword);
           if (filteredList.length === 0) {
             setSearchStatusOk(false);
           } else {
